@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>HAPPY NAIDOC WEEK</title>
     <style>
         body {
@@ -19,50 +19,55 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 100px;
+            width: 80px; /* Adjust size for smaller screens */
             height: auto;
         }
         h1 {
             color: pink;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 3.5em;
+            margin-bottom: 20px; /* Decrease margin for smaller screens */
+            font-size: 2.5em; /* Reduce font size */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .click-instruction {
             color: white;
             background-color: pink;
-            padding: 10px 20px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            font-size: 1.2em;
+            padding: 8px 16px; /* Adjust padding */
+            border-radius: 30px; /* Adjust border radius */
+            margin-bottom: 10px; /* Decrease margin */
+            font-size: 1em; /* Reduce font size */
             position: relative;
         }
         .click-instruction::before,
         .click-instruction::after {
             content: '♥';
             color: pink;
-            font-size: 1.5em;
+            font-size: 1.2em; /* Adjust heart size */
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
         }
         .click-instruction::before {
-            left: -25px;
+            left: -15px; /* Adjust position */
         }
         .click-instruction::after {
-            right: -25px;
+            right: -15px; /* Adjust position */
         }
         .image-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Stack images on mobile */
+            align-items: center;
             gap: 20px;
+            width: 100%; /* Ensure full width */
+            padding: 0 10px; /* Add padding for spacing */
         }
         .flip-card {
             background-color: transparent;
-            width: 300px;
+            width: 100%; /* Full width */
+            max-width: 300px; /* Set max width for cards */
             height: 300px;
             perspective: 1000px;
+            margin-bottom: 20px; /* Add spacing between cards */
         }
         .flip-card-inner {
             position: relative;
@@ -93,11 +98,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <img src="images/NAIDOC-logo.png" alt="NAIDOC Logo" class="logo">
@@ -126,6 +130,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
         // Confetti effect
         confetti({
