@@ -11,22 +11,24 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
             font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
         .logo {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 100px;
+            width: 60px;
             height: auto;
         }
         h1 {
             color: pink;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 3.5em;
+            margin: 60px 0 20px;
+            font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .click-instruction {
@@ -35,32 +37,35 @@
             padding: 10px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
-            font-size: 1.2em;
+            font-size: 1em;
             position: relative;
         }
         .click-instruction::before,
         .click-instruction::after {
             content: '♥';
             color: pink;
-            font-size: 1.5em;
+            font-size: 1.2em;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
         }
         .click-instruction::before {
-            left: -25px;
+            left: -20px;
         }
         .click-instruction::after {
-            right: -25px;
+            right: -20px;
         }
         .image-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
+            width: 100%;
         }
         .flip-card {
             background-color: transparent;
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             height: 300px;
             perspective: 1000px;
         }
@@ -96,18 +101,30 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        @media (min-width: 768px) {
+            .image-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            h1 {
+                font-size: 3.5em;
+            }
+            .logo {
+                width: 100px;
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <img src="/Users/tranthanhvinh/Desktop/HTML/NAIDOC Week/Images/NAIDOC-logo.png" alt="NAIDOC Logo" class="logo">
+    <img src="images/NAIDOC-logo.png" alt="NAIDOC Logo" class="logo">
     <h1>HAPPY NAIDOC WEEK</h1>
     <div class="click-instruction">Click on the photos</div>
     <div class="image-container">
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="/Users/tranthanhvinh/Desktop/HTML/NAIDOC Week/Images/NAIDOC.jpeg" alt="Happy NAIDOC week ❤️">
+                    <img src="images/NAIDOC.jpeg" alt="Happy NAIDOC week ❤️">
                 </div>
                 <div class="flip-card-back">
                     <p>Happy NAIDOC week, Olivia.</p>
@@ -117,7 +134,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="/Users/tranthanhvinh/Desktop/HTML/NAIDOC Week/Images/IMG_2281.jpeg" alt="Happy NAIDOC week ❤️">
+                    <img src="images/IMG_2281.jpeg" alt="Happy NAIDOC week ❤️">
                 </div>
                 <div class="flip-card-back">
                     <p>We love you ❤️.</p>
